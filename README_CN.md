@@ -435,8 +435,8 @@ python examples/run_single_task_state_compress.py
 结果、来源链接和错误单独保存在任务日志中，并供后续推理使用。匿名服务有用量限制，
 失败会作为错误返回模型，不会自动切换服务商。
 
-如需完全本地运行，请在开始任务前，在 `mcp_server_config.yaml` 的 `server_config`
-中添加 `web_search: {enabled: false}`。独立 Python 调用可在 server config 或 rollout
+如需完全本地运行，请在开始任务前，取消 `mcp_server_config.yaml` 的 `server_config`
+中 `"web_search": {"enabled": False},` 一行的注释。独立 Python 调用可在 server config 或 rollout
 config 中设置 `"web_search": False`。rollout 设置覆盖默认值并保存到会话；服务端
 `"web_search": {"allow_network": False}` 始终禁止网络，即使会话启用了搜索。
 已有会话保留其保存的设置，服务端当前的网络禁止规则也适用于恢复的会话。

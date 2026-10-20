@@ -477,11 +477,11 @@ are forwarded. The anonymous service has usage limits; failures are returned to
 the model as errors rather than silently switching providers.
 
 For fully local operation, disable web search **before starting a task**. In
-`mcp_server_config.yaml`, add this setting under `server_config`:
+`mcp_server_config.yaml`, uncomment this entry in the existing `server_config`
+mapping:
 
 ```yaml
-web_search:
-  enabled: false
+"web_search": {"enabled": False},
 ```
 
 For standalone Python callers, put `"web_search": False` in the server config or
